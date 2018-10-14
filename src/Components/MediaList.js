@@ -22,7 +22,8 @@ class MediaList extends Component {
       return (
         <Fragment>
           <iframe width='480' height='360' title={media.description} src={`http://www.youtube.com/embed/${mediaId}`}
-                  frameBorder='0' allow="autoplay; encrypted-media" allowfullscreen/>
+                  frameBorder='0' allow="autoplay; encrypted-media" allowFullScreen={true}/>
+          <br />
           <a href={url} className="mb-3">
             <i className="far fa-play-circle"/> Play Media
           </a>

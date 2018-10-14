@@ -10,7 +10,7 @@ fs.readdir(__dirname, function (err, filenames) {
     if (filename === 'index.json' || path.extname(filename) !== '.json')
       continue;
 
-    // console.log(filename);
+    console.log(filename);
 
     let date = filename.substring(0, 8);
     // console.log(date);
@@ -20,7 +20,7 @@ fs.readdir(__dirname, function (err, filenames) {
 
     let text = fs.readFileSync(filename);
     let post = JSON.parse(text);
-    let { creationTime, content, media, album, link, author, postAcl = {}, poll } = post;
+    let { url, creationTime, content, media, album, link, author, postAcl = {} } = post;
     let { communityAcl, visibleToStandardAcl } = postAcl || {};
     let { community } = communityAcl || {};
     let { circles = [] } = visibleToStandardAcl || {};
@@ -32,6 +32,10 @@ fs.readdir(__dirname, function (err, filenames) {
       // console.log("skipping non public or community post.");
       continue;
     }
+
+    let id = url.substring(url.length - 11);
+
+    console.log(id);
 
     if(community)
       communityAcl = { community: community };
@@ -58,11 +62,8 @@ fs.readdir(__dirname, function (err, filenames) {
       }))
     }
 
-    if(poll) {
-      poll = {};
-    }
-
     posts.push({
+      id: id,
       date: date,
       title: title,
       creationTime: creationTime,
@@ -72,7 +73,6 @@ fs.readdir(__dirname, function (err, filenames) {
       album: album,
       link: link,
       postAcl: postAcl,
-      poll: poll,
     });
   }
 

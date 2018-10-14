@@ -372,7 +372,7 @@ class PostList extends Component {
       renderedPostCount++;
 
       const createdAt = new Date(post.creationTime);
-      const url = `/posts/${post.date} - ${post.title}`;
+      const url = `/posts/${post.id}`;
 
       const { author, postAcl, media, album, link, poll } = post;
 

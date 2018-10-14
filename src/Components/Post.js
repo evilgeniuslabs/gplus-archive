@@ -25,34 +25,81 @@ class Post extends Component {
   }
 
   async componentDidMount() {
+    let post = null;
+
     try {
       this.setState({ error: null, isFetching: true });
 
       const id = this.props.match.params.id;
-      let url = `/posts/${id}.json`;
 
-      const basename = settingsJson.basename;
+      const index = await this.getIndex();
 
-      if(basename !== '')
-        url = `/${basename}/${url}`;
-
-      const response = await fetch(url);
-
-      if (!response.ok) {
-        this.setState({
-          error: `Cannot fetch post at ${url}`,
-          isFetching: false,
+      if(index) {
+        post = index.posts.find((post) => {
+          return post.id === id;
         });
-        return;
+        if(post) {
+          let url = `/posts/${post.date} - ${post.title}.json`;
+
+          const basename = settingsJson.basename;
+
+          if (basename !== '')
+            url = `/${basename}/${url}`;
+
+          const response = await fetch(url);
+
+          if (!response.ok) {
+            this.setState({
+              error: `Cannot fetch post at ${url}`,
+              isFetching: false,
+            });
+            return;
+          }
+
+          post = await response.json();
+        }
       }
-
-      const post = await response.json();
-
-      this.setState({ post: post, isFetching: false, error: null });
     }
     catch (e) {
       this.setState({ error: e, isFetching: false });
     }
+
+    this.setState({ post: post, isFetching: false, error: null });
+  }
+
+  async getIndex() {
+    let url = `/posts/index.json`;
+
+    const basename = settingsJson.basename;
+
+    if (basename !== '')
+      url = `/${basename}/${url}`;
+
+    let response = null;
+
+    try {
+      response = await fetch(url);
+
+      if (!response.ok) {
+        this.setState({
+          error: await ErrorAlert.getResponseError(response),
+          isFetching: false,
+        });
+        return null;
+      }
+
+      var index = await response.json();
+
+      return index;
+    }
+    catch (e) {
+      this.setState({
+        error: e,
+        isFetching: false,
+      });
+    }
+
+    return null;
   }
 
   render() {
@@ -90,7 +137,7 @@ class Post extends Component {
 
         <div className="mt-3" dangerouslySetInnerHTML={{ __html: content }}/>
 
-        <br />
+        <br/>
         <MediaList media={media}/>
         <LinkItem link={link}/>
         <Album album={album}/>
