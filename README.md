@@ -20,5 +20,4 @@ using the instructions at [react-gh-pages](https://github.com/gitname/react-gh-p
 14. Open `gplus-archive/src/settings.json` and change the `basename` property to `gplus-archive`. It has to be blank for local dev/testing, but has to be `gplus-archive` before committing and pushing to GitHub and hosting on GitHub Pages.
 15. Commit and push your forked repository to GitHub.
 16. From the 'gplus-archive' directory, run `npm run deploy`
-17. Commit and push your changes to your forked GitHub repository.
-18. Follow the instructions on [GitHub Pages](https://pages.github.com/) to host your site.
+17. Your site should now be ready at https://YOUR-NAME.github.io/gplus-archive.  If not, follow the instructions on [GitHub Pages](https://pages.github.com/) to configure your site.
