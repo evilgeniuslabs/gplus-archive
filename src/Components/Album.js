@@ -23,7 +23,7 @@ class Album extends Component {
         return (
           <div key={item.url} className="my-3">
             <a href={item.url}>
-              <i className="far fa-play-circle"/> Play Media
+              <i className="far fa-play-circle"/> Media
             </a>
           </div>
         );

@@ -8,7 +8,7 @@ class CommentList extends Component {
   render() {
     const { comments } = this.props;
 
-    if (!comments)
+    if (!comments || comments.length < 1)
       return (
         <Fragment/>
       );

@@ -34,7 +34,7 @@ class PostList extends Component {
 
     const basename = settingsJson.basename;
 
-    if(basename !== '')
+    if (basename !== '')
       url = `/${basename}/${url}`;
 
     let response = null;
@@ -59,7 +59,7 @@ class PostList extends Component {
       return;
     }
 
-    var index = await response.json();
+    const index = await response.json();
 
     const { location } = this.props;
 
@@ -283,7 +283,7 @@ class PostList extends Component {
         return (
           <Fragment>
             <a href={postUrl}>
-              <i className="far fa-play-circle"/> Play Media
+              <i className="far fa-play-circle"/> Media
             </a>
           </Fragment>
         );
@@ -357,7 +357,7 @@ class PostList extends Component {
 
     // console.log(`postsToSkip: ${postsToSkip}`);
 
-    let postItems = posts.map((post, index) => {
+    let postItems = posts.map((post) => {
       if (post.hidden)
         return null;
 
@@ -374,12 +374,18 @@ class PostList extends Component {
       const createdAt = new Date(post.creationTime);
       const url = `/posts/${post.id}`;
 
-      const { author, postAcl, media, album, link, poll } = post;
+      const { author, postAcl, media, album, link, poll, resharedPost } = post;
 
       const { communityAcl = {} } = postAcl || {};
       const { community } = communityAcl || {};
 
       let title = post.title;
+
+      if (resharedPost) {
+        if (!post.media) {
+          post.media = resharedPost.media;
+        }
+      }
 
       if (post.content) {
         title = post.content;
@@ -403,6 +409,13 @@ class PostList extends Component {
                 <Link to={url} className="text-secondary">{createdAt.toLocaleString()}</Link>
               </small>
             </h6>
+            {resharedPost && (
+              <p className="card-text">
+                <Link to={url}>
+                  Originally shared by {resharedPost.author.displayName}
+                </Link>
+              </p>
+            )}
             <p className="card-text">
               <Link to={url} className="text-body" dangerouslySetInnerHTML={{ __html: title }}
                     style={{ textDecoration: 'none' }}/>

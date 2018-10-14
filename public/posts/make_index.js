@@ -20,7 +20,7 @@ fs.readdir(__dirname, function (err, filenames) {
 
     let text = fs.readFileSync(filename);
     let post = JSON.parse(text);
-    let { url, creationTime, content, media, album, link, author, postAcl = {} } = post;
+    let { url, creationTime, content, media, album, link, author, resharedPost, postAcl = {} } = post;
     let { communityAcl, visibleToStandardAcl } = postAcl || {};
     let { community } = communityAcl || {};
     let { circles = [] } = visibleToStandardAcl || {};
@@ -36,6 +36,28 @@ fs.readdir(__dirname, function (err, filenames) {
     let id = url.substring(url.length - 11);
 
     console.log(id);
+
+    if(resharedPost) {
+      if(!content) {
+        content = resharedPost.content;
+      }
+
+      if(resharedPost.media) {
+        resharedPost.media = {
+          url: resharedPost.media.url,
+          contentType: resharedPost.media.contentType,
+        }
+      }
+
+      if (resharedPost.album) {
+        resharedPost.album.media = resharedPost.album.media.map((media => {
+          return {
+            url: media.url,
+            contentType: media.contentType,
+          };
+        }))
+      }
+    }
 
     if(community)
       communityAcl = { community: community };
@@ -72,6 +94,7 @@ fs.readdir(__dirname, function (err, filenames) {
       media: media,
       album: album,
       link: link,
+      resharedPost: resharedPost,
       postAcl: postAcl,
     });
   }

@@ -88,9 +88,7 @@ class Post extends Component {
         return null;
       }
 
-      var index = await response.json();
-
-      return index;
+      return await response.json();
     }
     catch (e) {
       this.setState({
@@ -104,14 +102,21 @@ class Post extends Component {
 
   render() {
     const { post = {}, isFetching = true, error = null } = this.state;
-    const {
-      creationTime = '', author = {}, content = '', media = {}, url, link = {}, album = {}, postAcl = {}, poll,
-      comments = [], plusOnes = []
+    let {
+      creationTime = '', author = {}, content = '', media, url, link = {}, album = {}, postAcl = {}, poll,
+      resharedPost, comments = [], plusOnes = []
     } = post || {};
     const { communityAcl = {} } = postAcl || {};
     const { community } = communityAcl || {};
 
     const creationDate = new Date(creationTime);
+
+    if(resharedPost) {
+      if(!media)
+        media = resharedPost.media;
+      if(!content)
+        content = resharedPost.content;
+    }
 
     return (
       <Fragment>
@@ -126,7 +131,7 @@ class Post extends Component {
 
         {community && community.displayName && (
           <Fragment>
-            <i className="fas fa-caret-right mr-1"></i>
+            <i className="fas fa-caret-right mr-1"/>
             <CommunityName community={community}/>
           </Fragment>
         )}
@@ -134,6 +139,16 @@ class Post extends Component {
         <small className="text-muted ml-5 text-secondary">
           {creationDate.toLocaleString()}
         </small>
+
+        <hr />
+
+        {resharedPost && (
+          <p className="card-text">
+            <a href={resharedPost.url}>
+              Originally shared by {resharedPost.author.displayName}
+            </a>
+          </p>
+        )}
 
         <div className="mt-3" dangerouslySetInnerHTML={{ __html: content }}/>
 

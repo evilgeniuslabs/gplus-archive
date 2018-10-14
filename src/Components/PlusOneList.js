@@ -7,7 +7,7 @@ class PlusOneList extends Component {
   render() {
     const { plusOnes } = this.props;
 
-    if (!plusOnes)
+    if (!plusOnes || plusOnes.length < 1)
       return (
         <Fragment/>
       );
