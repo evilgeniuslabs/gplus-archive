@@ -8,7 +8,7 @@ using the instructions at [react-gh-pages](https://github.com/gitname/react-gh-p
 2. Open `gplus-archive/package.json` and change the `homepage` property to match your GitHub username.
 3. Download and install [Node.js and npm](https://www.npmjs.com/get-npm)
 4. From the `gplus-archive` directory, run `npm install`.
-5. [Export your G+ data](https://support.google.com/plus/answer/1045788?hl=en) in JSON format using [Google Takeout](https://takeout.google.com/settings/takeout).
+5. [Export your G+ data](https://support.google.com/plus/answer/1045788?hl=en) in JSON format using [Google Takeout](https://takeout.google.com/settings/takeout).  I clicked `Select None`, then only selected `Google+ Stream`, and unchecked everything except `Posts`.  Then I selected `JSON` as the format.
 6. Download and extract all exported files.
 7. Copy all of the posts you'd like to host and share **publicly** from `Takeout/Google+ Stream/Posts`.  The files will start with a date and end with `.json`, like `20170623 - Post.json`.
 8. Copy the above files to `gplus-archive/public/posts`.
