@@ -30,9 +30,12 @@ class PostList extends Component {
   async componentDidMount() {
     this.setState({ error: null, isFetching: true });
 
-    const homepage = settingsJson.homepage;
+    let url = `/posts/index.json`;
 
-    const url = `${homepage}/posts/index.json`;
+    const basename = settingsJson.basename;
+
+    if(basename !== '')
+      url = `/${basename}/${url}`;
 
     let response = null;
 

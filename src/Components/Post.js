@@ -28,10 +28,13 @@ class Post extends Component {
     try {
       this.setState({ error: null, isFetching: true });
 
-      const homepage = settingsJson.homepage;
-
       const id = this.props.match.params.id;
-      const url = `${homepage}/posts/${id}.json`;
+      let url = `/posts/${id}.json`;
+
+      const basename = settingsJson.basename;
+
+      if(basename !== '')
+        url = `/${basename}/${url}`;
 
       const response = await fetch(url);
 
