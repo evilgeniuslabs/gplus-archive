@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="Google+ icon.svg"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   width="66.165833mm"
+   height="66.165833mm"
+   viewBox="0 0 66.165833 66.165833"
+   version="1.1"
+   id="svg8">
+  <sodipodi:namedview
+     fit-margin-bottom="0.01"
+     fit-margin-right="0.01"
+     fit-margin-left="0.01"
+     fit-margin-top="0.01"
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="671.49687"
+     inkscape:cy="81.801"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:snap-center="false"
+     inkscape:snap-object-midpoints="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1358"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <title
+     id="title1096">Google+ icon</title>
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient2507">
+      <stop
+         style="stop-color:#e67f76;stop-opacity:1"
+         offset="0"
+         id="stop2503" />
+      <stop
+         style="stop-color:#b03b30;stop-opacity:1"
+         offset="1"
+         id="stop2505" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient2491">
+      <stop
+         style="stop-color:#000000;stop-opacity:0.52364865"
+         offset="0"
+         id="stop2487" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop2489" />
+    </linearGradient>
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect834"
+       effect="spiro" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect830"
+       is_visible="true" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2491"
+       id="linearGradient2493"
+       x1="-329.66211"
+       y1="-208.7998"
+       x2="-181.98633"
+       y2="-61.124023"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.26458333,0,0,0.26458333,-191.24475,111.28883)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2507"
+       id="linearGradient2509"
+       x1="-252.49797"
+       y1="36.394131"
+       x2="-252.49797"
+       y2="98.133392"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Google+ icon</dc:title>
+        <dc:date>04/04/2018</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Google Inc</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:publisher>
+          <cc:Agent>
+            <dc:title>CMetalCore</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:source>https://commons.wikimedia.org/wiki/File:Logo_google%2B_2015.png</dc:source>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(289.64506,-32.537086)"
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g2514"
+       transform="matrix(1.074691,0,0,1.074691,21.633142,-7.3714757)">
+      <circle
+         style="opacity:1;fill:#dd5044;fill-opacity:1;stroke:url(#linearGradient2509);stroke-width:0.79374999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         id="path1697"
+         cx="-258.86072"
+         cy="67.918571"
+         r="30.377474" />
+      <path
+         id="path2262"
+         d="m -267.1104,53.829289 c -7.66054,0 -13.87099,6.319549 -13.87099,14.114899 0,3.942181 1.58821,7.507229 4.1491,10.068121 l 20.19825,20.19825 a 30.377474,30.377474 0 0 0 27.604,-24.648108 l -11.60601,-11.606008 h -3.97598 v 4.069 h -4.06901 v 0.0987 l -8.66148,-8.661487 c -2.6049,-2.499897 -5.93681,-3.632235 -9.76685,-3.632338 h -5.3e-4 z"
+         style="opacity:0.52399998;fill:url(#linearGradient2493);fill-opacity:1;stroke:none;stroke-width:2.9616487;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         inkscape:connector-curvature="0" />
+      <path
+         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.9616487;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         d="m -267.1104,53.829289 c -7.66054,0 -13.87099,6.319549 -13.87099,14.114899 0,7.79535 6.21045,14.114902 13.87099,14.114902 4.99051,0 7.88256,-1.570562 10.39264,-4.124812 2.51009,-2.554261 3.42409,-6.417474 3.42409,-10.315133 0,-0.594651 -0.0383,-1.185992 -0.10542,-1.770951 h -5.4095 -1.03094 -7.10241 v 4.990393 h 7.95455 c -0.32315,1.24423 -0.87128,2.377982 -1.73425,3.256132 -1.54545,1.57267 -3.32643,2.540413 -6.3991,2.540413 -4.71663,0 -8.54056,-3.891333 -8.54056,-8.690944 0,-4.799618 3.82393,-8.690424 8.54056,-8.690424 2.29454,0 4.2947,0.666813 5.87871,2.120283 l 3.90519,-3.905186 -0.006,-0.0062 c -2.60501,-2.50001 -5.9371,-3.632337 -9.76736,-3.632337 z m 22.49837,8.127154 v 4.069 h -4.06901 v 3.975468 h 4.06901 v 4.069519 h 3.97598 v -4.069519 h 4.069 v -3.975468 h -4.069 v -4.069 z m -15.23422,1.154451 c 0.002,0.003 0.005,0.0082 0.006,0.01188 v -0.0052 z"
+         id="path1241"
+         inkscape:connector-curvature="0" />
+    </g>
+  </g>
+</svg>
