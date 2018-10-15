@@ -374,7 +374,7 @@ class PostList extends Component {
       const createdAt = new Date(post.creationTime);
       const url = `/posts/${post.id}`;
 
-      const { author, postAcl, media, album, link, poll, resharedPost } = post;
+      const { author, postAcl, media, album, link, poll, resharedPost, commentCount = 0 } = post;
 
       const { communityAcl = {} } = postAcl || {};
       const { community } = communityAcl || {};
@@ -426,6 +426,11 @@ class PostList extends Component {
             {poll && (
               <p className="card-text">
                 <Link to={url}>View Poll</Link>
+              </p>
+            )}
+            {commentCount > 0 && (
+              <p className="card-text">
+                <Link to={url}>{`${commentCount} Comment${commentCount !== 1 && 's'}`}</Link>
               </p>
             )}
           </div>

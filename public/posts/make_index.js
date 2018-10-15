@@ -20,7 +20,7 @@ fs.readdir(__dirname, function (err, filenames) {
 
     let text = fs.readFileSync(filename);
     let post = JSON.parse(text);
-    let { url, creationTime, content, media, album, link, author, resharedPost, postAcl = {} } = post;
+    let { url, creationTime, content, media, album, link, author, resharedPost, postAcl = {}, comments = [] } = post;
     let { communityAcl, visibleToStandardAcl } = postAcl || {};
     let { community } = communityAcl || {};
     let { circles = [] } = visibleToStandardAcl || {};
@@ -96,6 +96,7 @@ fs.readdir(__dirname, function (err, filenames) {
       link: link,
       resharedPost: resharedPost,
       postAcl: postAcl,
+      commentCount: comments.length,
     });
   }
 
